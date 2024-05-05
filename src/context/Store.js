@@ -8,7 +8,7 @@ const GetStoreData = () => {
 	useEffect(() => {
 		const getAllStore = () => {
 			try {
-				Axios.get(`http://localhost:3001/stores/`)
+				Axios.get(`https://kain-lasalle-admin-backend.onrender.com/stores/`)
 					.then((res) => {
 						setStore(res.data.store);
 					})
@@ -31,7 +31,7 @@ const GetStoreByID = (storeID) => {
 	useEffect(() => {
 		const getStoreByID = () => {
 			try {
-				Axios.post(`http://localhost:3001/stores/`, {
+				Axios.post(`https://kain-lasalle-admin-backend.onrender.com/stores/`, {
 					storeID,
 				})
 					.then((res) => {

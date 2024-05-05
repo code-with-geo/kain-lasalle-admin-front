@@ -203,10 +203,14 @@ function AddStore() {
 		formData.append("file", data.Image[0]);
 
 		try {
-			Axios.post(`http://localhost:3001/stores/add`, formData, {
-				name: data.Name,
-				description: data.Description,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/stores/add`,
+				formData,
+				{
+					name: data.Name,
+					description: data.Description,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						console.log(res.data.message);

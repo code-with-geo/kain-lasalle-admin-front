@@ -48,9 +48,12 @@ function ActionButton({ params }) {
 
 	const _delete = (id) => {
 		try {
-			Axios.post(`http://localhost:3001/stores/delete`, {
-				storeID: id,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/stores/delete`,
+				{
+					storeID: id,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						console.log(res.data.message);

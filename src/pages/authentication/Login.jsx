@@ -57,10 +57,13 @@ function Login() {
 	const _login = (data, event) => {
 		event.preventDefault();
 		try {
-			Axios.post(`http://localhost:3001/admins/login`, {
-				username: data.Username,
-				password: data.Password,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/admins/login`,
+				{
+					username: data.Username,
+					password: data.Password,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						alert(res.data.message);

@@ -224,11 +224,15 @@ function EditStore() {
 		}
 
 		try {
-			Axios.post(`http://localhost:3001/stores/edit`, formData, {
-				storeID,
-				name,
-				description,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/stores/edit`,
+				formData,
+				{
+					storeID,
+					name,
+					description,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						console.log(res.data.message);

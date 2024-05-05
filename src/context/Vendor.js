@@ -8,7 +8,9 @@ const GetAllVendor = (storeID) => {
 	useEffect(() => {
 		const getAllVendor = () => {
 			try {
-				Axios.get(`http://localhost:3001/vendors/${storeID}`)
+				Axios.get(
+					`https://kain-lasalle-admin-backend.onrender.com/vendors/${storeID}`
+				)
 					.then((res) => {
 						setVendor(res.data.vendors);
 					})
@@ -31,7 +33,9 @@ const GetVendorByID = (vendorID) => {
 	useEffect(() => {
 		const getVendorByID = () => {
 			try {
-				Axios.get(`http://localhost:3001/vendors/get-by-id/${vendorID}`)
+				Axios.get(
+					`https://kain-lasalle-admin-backend.onrender.com/vendors/get-by-id/${vendorID}`
+				)
 					.then((res) => {
 						setVendor(res.data.vendor);
 					})

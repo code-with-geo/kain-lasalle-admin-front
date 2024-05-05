@@ -119,14 +119,18 @@ function AddProducts() {
 		formData.append("file", data.Image[0]);
 
 		try {
-			Axios.post(`http://localhost:3001/products/add`, formData, {
-				storeID: storeID,
-				sku: data.SKU,
-				name: data.Name,
-				description: data.Description,
-				price: data.Price,
-				units: data.Units,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/products/add`,
+				formData,
+				{
+					storeID: storeID,
+					sku: data.SKU,
+					name: data.Name,
+					description: data.Description,
+					price: data.Price,
+					units: data.Units,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						console.log(res.data.message);

@@ -141,14 +141,18 @@ function EditProducts() {
 		}
 
 		try {
-			Axios.post(`http://localhost:3001/products/edit`, formData, {
-				productID: id,
-				sku,
-				name,
-				description,
-				price,
-				units,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/products/edit`,
+				formData,
+				{
+					productID: id,
+					sku,
+					name,
+					description,
+					price,
+					units,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						console.log(res.data.message);

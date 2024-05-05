@@ -8,7 +8,9 @@ const GetAllProduct = (storeID) => {
 	useEffect(() => {
 		const getAllProducts = () => {
 			try {
-				Axios.get(`http://localhost:3001/products/${storeID}`)
+				Axios.get(
+					`https://kain-lasalle-admin-backend.onrender.com/products/${storeID}`
+				)
 					.then((res) => {
 						setProduct(res.data.products);
 					})
@@ -31,9 +33,12 @@ const GetProductByID = (productID) => {
 	useEffect(() => {
 		const getProductByID = () => {
 			try {
-				Axios.post(`http://localhost:3001/products/get-by-id`, {
-					productID: productID,
-				})
+				Axios.post(
+					`https://kain-lasalle-admin-backend.onrender.com/products/get-by-id`,
+					{
+						productID: productID,
+					}
+				)
 					.then((res) => {
 						setProduct(res.data.products);
 					})

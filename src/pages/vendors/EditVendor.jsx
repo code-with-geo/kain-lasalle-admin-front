@@ -74,12 +74,15 @@ function EditVendor() {
 	const _editVendor = (data, event) => {
 		event.preventDefault();
 		try {
-			Axios.post(`http://localhost:3001/vendors/edit/${id}`, {
-				name: name,
-				email: email,
-				password: password,
-				phonenumber: phonenumber,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/vendors/edit/${id}`,
+				{
+					name: name,
+					email: email,
+					password: password,
+					phonenumber: phonenumber,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						console.log(res.data.message);

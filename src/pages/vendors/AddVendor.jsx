@@ -56,13 +56,16 @@ function AddVendor() {
 	const _addVendor = (data, event) => {
 		event.preventDefault();
 		try {
-			Axios.post(`http://localhost:3001/vendors/add`, {
-				storeID: storeID,
-				name: data.Name,
-				email: data.Email,
-				password: data.Password,
-				phonenumber: data.Number,
-			})
+			Axios.post(
+				`https://kain-lasalle-admin-backend.onrender.com/vendors/add`,
+				{
+					storeID: storeID,
+					name: data.Name,
+					email: data.Email,
+					password: data.Password,
+					phonenumber: data.Number,
+				}
+			)
 				.then((res) => {
 					if (res.data.responsecode === "402") {
 						alert(res.data.message);
