@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {
-	AccountBoxRounded,
-	AssessmentRounded,
-	DashboardRounded,
-	StorefrontRounded,
-} from "@mui/icons-material";
+import { FactCheck, StorefrontRounded } from "@mui/icons-material";
 
 const Container = styled.div`
 	width: 250px;
@@ -70,6 +65,12 @@ function SideNav(props) {
 							<PageLinks to='/store'>
 								<StorefrontRounded />
 								<Label>Stores</Label>
+							</PageLinks>
+						</ListItem>
+						<ListItem>
+							<PageLinks to='/orders'>
+								<FactCheck />
+								<Label>Orders</Label>
 							</PageLinks>
 						</ListItem>
 					</List>
