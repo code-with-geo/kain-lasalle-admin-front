@@ -199,7 +199,11 @@ function AddStore() {
 		event.preventDefault();
 		const formData = new FormData();
 		formData.append("name", data.Name);
+		formData.append("address", data.Address);
 		formData.append("description", data.Description);
+		formData.append("contactperson", data.ContactPerson);
+		formData.append("contactno", data.ContactNo);
+		formData.append("storehour", data.StoreHour);
 		formData.append("file", data.Image[0]);
 
 		try {
@@ -208,7 +212,11 @@ function AddStore() {
 				formData,
 				{
 					name: data.Name,
+					address: data.Address,
 					description: data.Description,
+					contactperson: data.ContactPerson,
+					contactno: data.ContactNo,
+					storehour: data.StoreHour,
 				}
 			)
 				.then((res) => {
@@ -274,9 +282,46 @@ function AddStore() {
 								</ListItem>
 								<ListItem>
 									<TextArea
+										placeholder='Please enter store address'
+										require='true'
+										{...register("Address")}
+									/>
+								</ListItem>
+								<ListItem>
+									<TextArea
 										placeholder='Please enter product description'
 										require='true'
 										{...register("Description")}
+									/>
+								</ListItem>
+								<ListItem>
+									<TextBox
+										type='text'
+										height='30px'
+										width='515px'
+										placeholder='Please enter contact person'
+										require='true'
+										{...register("ContactPerson")}
+									/>
+								</ListItem>
+								<ListItem>
+									<TextBox
+										type='text'
+										height='30px'
+										width='515px'
+										placeholder='Please enter contact number'
+										require='true'
+										{...register("ContactNo")}
+									/>
+								</ListItem>
+								<ListItem>
+									<TextBox
+										type='text'
+										height='30px'
+										width='515px'
+										placeholder='Please enter store hour'
+										require='true'
+										{...register("StoreHour")}
 									/>
 								</ListItem>
 								<ListItem>
