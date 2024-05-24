@@ -26,9 +26,9 @@ function ActionButton({ params }) {
 	const _delete = (id) => {
 		try {
 			Axios.post(
-				`https://kain-lasalle-admin-backend.onrender.com/products/delete`,
+				`https://kain-lasalle-admin-backend.onrender.com/vendors/delete`,
 				{
-					productID: id,
+					vendorID: id,
 				}
 			)
 				.then((res) => {
